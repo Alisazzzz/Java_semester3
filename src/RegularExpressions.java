@@ -93,7 +93,7 @@ public class RegularExpressions {
     }
 
     private static int cat2(String s) {
-        Pattern cat = Pattern.compile("[^\\s][Кк][Оо][Тт]\\b");
+        Pattern cat = Pattern.compile("(^|\\s)[Кк][Оо][Тт]\\b");
         Matcher m = cat.matcher(s);
         int c = 0;
         while (m.find()) {

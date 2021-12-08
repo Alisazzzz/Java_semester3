@@ -59,7 +59,7 @@ public class MultidimentionalArrays {
         }
     }
 
-    private static void printTableAligned(int[][] a) {
+    public static void printTableAligned(int[][] a) {
         int numberOfColumns = 0;
         for (int[] array: a) {
             if (array.length > numberOfColumns)
