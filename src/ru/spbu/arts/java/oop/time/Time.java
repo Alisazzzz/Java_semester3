@@ -1,8 +1,8 @@
 package ru.spbu.arts.java.oop.time;
 
 public class Time {
-    int hours;
-    int min;
+    private int hours;
+    private int min;
 
     Time(int a, int b) {
         this.hours = a;

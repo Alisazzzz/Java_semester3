@@ -26,13 +26,18 @@ public class DrawWithDrawing {
 
         ImmutableDrawing picture3 = new ImmutableDrawing(20, 20, '.');
         picture3.print();
-        System.out.println();
+        System.out.println("     ");
 
         picture3.drawVerticalLine(6, 9, 14, '|').print();
         picture3.drawVerticalLine(12, 9, 14, '|').print();
         picture3.print();
         picture3.drawRectangle(5, 5, 15, 15, '+').print();
         picture3.drawing(10, 0, picture3.drawCircle(10, 10, 10, '*')).print();
+
+        ImmutableDrawing picture4 = picture3.drawVerticalLine(6, 9, 14, '|').drawVerticalLine(12, 9, 14, '|');
+        picture4 = picture4.drawHorizontalLine(6, 12, 9, '#').drawHorizontalLine(6, 12, 14, '#');
+        picture4 = picture4.drawLine(6, 8, 9, 5, '/').drawLine(5, 9, 9, 11, '\\').setPoint(9, 5, '#');
+        picture4.print();
 
     }
 }

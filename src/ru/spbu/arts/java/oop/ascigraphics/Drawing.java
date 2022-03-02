@@ -3,7 +3,7 @@ package ru.spbu.arts.java.oop.ascigraphics;
 import java.util.Arrays;
 
 public class Drawing {
-    char[][] picture;
+    private char[][] picture;
 
     Drawing(int rows, int columns, char symbol) {
         this.picture = new char[rows][columns];
