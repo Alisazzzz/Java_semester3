@@ -1,9 +1,8 @@
-package ru.spbu.arts.java.oop.collections;
+package ru.spbu.arts.java.collections;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.*;
 
 public class Collections {
