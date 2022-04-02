@@ -1,3 +1,5 @@
+package someClasses;
+
 public class IntroTaskLeap {
     public static void main(String[] args) {
         System.out.println(introTaskLeap(2020));

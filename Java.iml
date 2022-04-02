@@ -7,5 +7,30 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/src/javafx-sdk-17.0.2/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/src/javafx-sdk-17.0.2/lib" recursive="false" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/src/javafx-sdk-17.0.2/src.zip!/javafx.base" />
+          <root url="jar://$MODULE_DIR$/src/javafx-sdk-17.0.2/src.zip!/javafx.controls" />
+          <root url="jar://$MODULE_DIR$/src/javafx-sdk-17.0.2/src.zip!/javafx.fxml" />
+          <root url="jar://$MODULE_DIR$/src/javafx-sdk-17.0.2/src.zip!/javafx.graphics" />
+          <root url="jar://$MODULE_DIR$/src/javafx-sdk-17.0.2/src.zip!/javafx.media" />
+          <root url="jar://$MODULE_DIR$/src/javafx-sdk-17.0.2/src.zip!/javafx.swing" />
+          <root url="jar://$MODULE_DIR$/src/javafx-sdk-17.0.2/src.zip!/javafx.web" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

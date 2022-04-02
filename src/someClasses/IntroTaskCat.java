@@ -1,3 +1,5 @@
+package someClasses;
+
 public class IntroTaskCat {
     public static void main(String[] args) {
         introTaskCat(34);

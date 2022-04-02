@@ -1,3 +1,5 @@
+package someClasses;
+
 public class IntroTaskSameDigits {
     public static void main(String[] args) {
         System.out.println(introTaskSameDigits(133));

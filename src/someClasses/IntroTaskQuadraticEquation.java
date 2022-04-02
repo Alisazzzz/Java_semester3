@@ -1,3 +1,5 @@
+package someClasses;
+
 public class IntroTaskQuadraticEquation {
     public static void main(String[] args) {
         introTaskQuadraticEquation(3.,5.,6.);

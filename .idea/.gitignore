@@ -7,3 +7,5 @@ out/
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
+
+src/javafx-sdk-17.0.2

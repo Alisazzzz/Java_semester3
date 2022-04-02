@@ -1,3 +1,5 @@
+package someClasses;
+
 public class BinarySearchClass {
 
     public static int binarySearch(int[] a, int value) {

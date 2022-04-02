@@ -1,3 +1,5 @@
+package someClasses;
+
 public class PrimalityTest {
 
     public static void main(String[] args) {

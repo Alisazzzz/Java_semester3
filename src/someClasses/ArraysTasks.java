@@ -1,3 +1,5 @@
+package someClasses;
+
 import java.util.Arrays;
 
 public class ArraysTasks {

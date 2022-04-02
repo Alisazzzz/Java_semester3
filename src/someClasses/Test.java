@@ -1,3 +1,5 @@
+package someClasses;
+
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
@@ -7,7 +9,7 @@ public class Test {
 
     public static void main(String[] args) throws Exception {
 
-        Path path = Path.of("src","inFile.txt");
+        Path path = Path.of("src", "someClasses/inFile.txt");
         writeFile(readFile(path));
 
     }
