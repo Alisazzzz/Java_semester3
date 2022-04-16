@@ -4,7 +4,7 @@ public class DrawingWithLambda implements Printable {
 
     private char[][] picture;
 
-    DrawingWithLambda(int rows, int columns, char symbol) {
+    public DrawingWithLambda(int rows, int columns, char symbol) {
         this.picture = new char[rows][columns];
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {

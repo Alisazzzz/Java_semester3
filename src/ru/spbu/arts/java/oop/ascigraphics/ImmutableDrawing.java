@@ -4,7 +4,7 @@ public class ImmutableDrawing {
     private char[][] picture;
     private char bg;
 
-    ImmutableDrawing(int rows, int columns, char symbol) {
+    public ImmutableDrawing(int rows, int columns, char symbol) {
         this.picture = new char[rows][columns];
         this.bg = symbol;
         for (int i = 0; i < rows; i++) {
@@ -14,7 +14,7 @@ public class ImmutableDrawing {
         }
     }
 
-    private ImmutableDrawing copying() {
+    private ImmutableDrawing copy() {
         ImmutableDrawing newPicture = new ImmutableDrawing(picture.length, picture[0].length, bg);
         for (int i = 0; i < picture.length; i++)
             System.arraycopy(picture[i], 0, newPicture.picture[i], 0, picture[i].length);
@@ -31,13 +31,13 @@ public class ImmutableDrawing {
     }
 
     public ImmutableDrawing setPoint(int x, int y, char symbol) {
-        ImmutableDrawing newPicture = copying();
+        ImmutableDrawing newPicture = copy();
         newPicture.picture[y][x] = symbol;
         return newPicture;
     }
 
     public ImmutableDrawing drawVerticalLine(int x, int y1, int y2, char symbol) {
-        ImmutableDrawing newPicture = copying();
+        ImmutableDrawing newPicture = copy();
         for (int i = y1; i <= y2; i++) {
             newPicture.picture[i][x] = symbol;
         }
@@ -45,7 +45,7 @@ public class ImmutableDrawing {
     }
 
     public ImmutableDrawing drawHorizontalLine(int x1, int x2, int y, char symbol) {
-        ImmutableDrawing newPicture = copying();
+        ImmutableDrawing newPicture = copy();
         for (int i = x1; i <= x2; i++) {
             newPicture.picture[y][i] = symbol;
         }
@@ -53,7 +53,7 @@ public class ImmutableDrawing {
     }
 
     public ImmutableDrawing drawLine(int x1, int y1, int x2, int y2, char symbol) {
-        ImmutableDrawing newPicture = copying();
+        ImmutableDrawing newPicture = copy();
         float s = Math.abs(((float)y2 - (float)y1)/((float)x2 - (float)x1));
         int t;
         if (y2 - y1 > 0)
@@ -73,7 +73,7 @@ public class ImmutableDrawing {
     }
 
     public ImmutableDrawing drawRectangle(int x1, int y1, int x2, int y2, char symbol) {
-        ImmutableDrawing newPicture = copying();
+        ImmutableDrawing newPicture = copy();
         for (int i = y1; i <= y2; i++) {
             newPicture.picture[i][x1] = symbol;
         }
@@ -90,7 +90,7 @@ public class ImmutableDrawing {
     }
 
     public ImmutableDrawing drawCircle(int x, int y, int r, char symbol) {
-        ImmutableDrawing newPicture = copying();
+        ImmutableDrawing newPicture = copy();
         for (int i = 0; i < picture.length; i++) {
             for (int j = 0; j < picture[i].length; j++) {
                 if ( Math.pow(i - x, 2) + Math.pow(j - y, 2) <= Math.pow(r, 2) )
@@ -101,7 +101,7 @@ public class ImmutableDrawing {
     }
 
     public ImmutableDrawing drawing(int x, int y, ImmutableDrawing original) {
-        ImmutableDrawing newPicture = copying();
+        ImmutableDrawing newPicture = copy();
         for (int i = y; i < picture.length; i++) {
             for (int j = x; j <picture[i].length; j++) {
                 newPicture.picture[j][i] = original.picture[i-y][j-x];

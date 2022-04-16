@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Drawing {
     private char[][] picture;
 
-    Drawing(int rows, int columns, char symbol) {
+    public Drawing(int rows, int columns, char symbol) {
         this.picture = new char[rows][columns];
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {

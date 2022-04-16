@@ -4,7 +4,7 @@ public class PrintableString implements Printable{
 
     private String str;
 
-    PrintableString(String s) {
+    public PrintableString(String s) {
         this.str = s;
     }
 

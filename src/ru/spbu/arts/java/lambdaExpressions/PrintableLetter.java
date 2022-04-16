@@ -5,7 +5,7 @@ public class PrintableLetter implements Printable{
     private String symbol;
     private int amount;
 
-    PrintableLetter(String c, int x) {
+    public PrintableLetter(String c, int x) {
         this.symbol = c;
         this.amount = x;
     }
