@@ -4,7 +4,7 @@ public class Time {
     private int hours;
     private int min;
 
-    Time(int a, int b) {
+    public Time(int a, int b) {
         this.hours = a;
         this.min = b;
     }

@@ -1,6 +1,6 @@
 package ru.spbu.arts.java.oop.rational;
 
-public class rationalChecking {
+public class RationalChecking {
 
     public static void main(String[] args) {
 

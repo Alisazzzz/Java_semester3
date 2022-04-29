@@ -20,7 +20,7 @@ public class Rational {
         return a1;
     }
 
-    Rational(long a, long b) {
+    public Rational(long a, long b) {
         if (b < 0) {
             b = b * (-1);
             a = a * (-1);
@@ -34,7 +34,7 @@ public class Rational {
         }
     }
 
-    Rational(int a) {
+    public Rational(int a) {
         this.n = a;
         this.d = 1;
     }
