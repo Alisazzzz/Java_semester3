@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -16,7 +18,6 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import javax.imageio.ImageIO;
-import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -33,6 +34,14 @@ public class FractalViewer extends Application {
     private double x = -4;
     private double y = 3;
     private double d = 8 / 600.0;
+
+    private double xForPressed;
+    private double yForPressed;
+    private double xForReleased;
+    private double yForReleased;
+
+    private double currentMouseX;
+    private double currentMouseY;
 
     private Fractal f = new Mandelbrot();
     private Palette p = new HSBNewPalette();
@@ -59,6 +68,7 @@ public class FractalViewer extends Application {
 
         VBox root = initInterface();
         initInteraction();
+        mouseInteraction();
         primaryStage.setScene(new Scene(root));
 
         primaryStage.show();
@@ -136,7 +146,6 @@ public class FractalViewer extends Application {
         export.addEventHandler(ActionEvent.ACTION, event -> {
             File fileToSave = fileChooser.showSaveDialog(null);
             if (fileToSave != null) {
-                System.out.println("Выбран файл" + fileToSave);
                 BufferedImage picture = SwingFXUtils.fromFXImage(img, null);
                 try {
                     ImageIO.write(picture, "png", new File(fileToSave.getPath()));
@@ -163,6 +172,45 @@ public class FractalViewer extends Application {
             d = Double.parseDouble(inFile.next());
             paintNewDisplay();
         }
+    }
+
+    private void mouseInteraction() {
+
+        imgView.addEventHandler(MouseEvent.MOUSE_PRESSED, event -> {
+            xForPressed = event.getX();
+            yForPressed = event.getY();
+        });
+
+        imgView.addEventHandler(MouseEvent.MOUSE_RELEASED, event -> {
+            xForReleased = event.getX();
+            yForReleased = event.getY();
+
+            x -= (xForReleased - xForPressed) * d;
+            y += (yForReleased - yForPressed) * d;
+
+            paintNewDisplay();
+        });
+
+        imgView.addEventHandler(MouseEvent.MOUSE_MOVED, event -> {
+            currentMouseX = event.getX();
+            currentMouseY = event.getY();
+        });
+
+        imgView.addEventHandler(ScrollEvent.SCROLL, event -> {
+
+            double newD;
+            if (event.getDeltaY() > 0)
+                newD = d / 1.5;
+            else
+                newD = d * 1.5;
+
+            x += currentMouseX * (d - newD);
+            y -= currentMouseY * (d - newD);
+            d = newD;
+
+            paintNewDisplay();
+        });
+
     }
 
     private void paintNewDisplay() {
